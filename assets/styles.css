@@ -562,7 +562,7 @@ html[data-theme="dark"] .pill { color: #86efc4; }
 .dot--ok { background: var(--ok); }
 
 @media (prefers-reduced-motion: no-preference) {
-  .pill .dot, .slot .dot { animation: pulse 2.6s ease-in-out infinite; }
+  .pill .dot { animation: pulse 2.6s ease-in-out infinite; }
 }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
@@ -600,18 +600,6 @@ html[data-theme="dark"] .pill { color: #86efc4; }
 }
 .ticket__price { font-size: 1.125rem; font-weight: 650; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .ticket__price i { font-style: normal; font-size: 0.75rem; font-weight: 400; color: var(--dimmer); margin-right: 3px; }
-
-.slot {
-  position: absolute; left: -12px; bottom: -30px;
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 14px; border-radius: 999px;
-  font-size: 0.75rem; color: var(--text);
-  background: var(--glass-strong);
-  border: 1px solid var(--line-2);
-  box-shadow: var(--shadow-soft);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
 
 /* ---------- Stats ---------- */
 .stats {
@@ -964,7 +952,17 @@ html[data-theme="dark"] .pill { color: #86efc4; }
 }
 
 /* Список услуг в шаге 2 */
-.pick { display: grid; gap: 14px; max-height: 420px; overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
+/* Список услуг в шаге 2: на телефоне — обычный поток без своего скролла,
+   иначе контейнер перехватывает жест и страница не листается. */
+.pick { display: grid; gap: 14px; }
+@media (min-width: 861px) {
+  .pick {
+    max-height: 420px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 4px;
+  }
+}
 .pick__cat {
   font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--dimmer); margin-bottom: 4px;
@@ -1153,7 +1151,6 @@ html[data-theme="dark"] .fld__i--date::-webkit-calendar-picker-indicator { filte
     animation-delay: calc(var(--d, 0) * 75ms);
   }
   .ticket { animation: cardIn 820ms var(--ease-out) both; animation-delay: 180ms; }
-  .slot { animation: rise 600ms var(--ease-out) both; animation-delay: 720ms; }
   .steps__line { animation: trace 900ms var(--ease-out) both; animation-delay: 620ms; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -1205,7 +1202,6 @@ html[data-theme="dark"] .fld__i--date::-webkit-calendar-picker-indicator { filte
   .hero { padding-top: 96px; }
   .hero__actions .btn { flex: 1 1 100%; }
   .hero__points { gap: 8px 14px; font-size: 0.8125rem; }
-  .slot { left: -8px; bottom: -26px; font-size: 0.6875rem; padding: 8px 12px; }
   .ticket { padding: 18px; }
   .cards { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr; }
@@ -1251,7 +1247,7 @@ html[data-theme="dark"] .fld__i--date::-webkit-calendar-picker-indicator { filte
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  .hdr.is-scrolled, .mmenu, .est__in, .slot {
+  .hdr.is-scrolled, .mmenu, .est__in {
     -webkit-backdrop-filter: none; backdrop-filter: none;
     background: var(--bg-2);
   }
