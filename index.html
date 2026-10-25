@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js">
+<html lang="ru" class="no-js" data-theme="dark" data-clean="0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-<title>DETAILING — выездной детейлинг: полировка, керамика, химчистка у вас</title>
-<meta name="description" content="Выездной детейлинг в Москве и области: детейлинг-мойка, полировка кузова, керамика, химчистка салона. Мастер приезжает к вам со своей водой, химией и оборудованием. Прайс-лист и запись онлайн.">
-<meta name="theme-color" content="#07080a">
-<meta name="color-scheme" content="dark">
+<title>PENA DETAIL — выездной детейлинг в Москве: полировка, керамика, химчистка</title>
+<meta name="description" content="Выездной детейлинг PENA DETAIL: детейлинг-мойка, полировка кузова, керамика, химчистка салона. Мастер приезжает к вам со своей водой и оборудованием. Москва и область до 30 км от МКАД.">
+<meta name="theme-color" content="#07080a" data-theme-color>
+<meta name="color-scheme" content="dark light">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DETAILING — выездной детейлинг автомобилей">
+<meta property="og:title" content="PENA DETAIL — выездной детейлинг">
 <meta property="og:description" content="Моем, полируем и защищаем автомобиль у вашего дома, офиса или в паркинге. Вы занимаетесь своими делами — мастер работает на месте.">
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css">
-<script>document.documentElement.classList.replace('no-js','js');</script>
+<script>
+/* Тема и «чистота» — до первой отрисовки, чтобы не было вспышки. */
+(function () {
+  var d = document.documentElement;
+  d.classList.replace('no-js', 'js');
+  try {
+    var t = localStorage.getItem('pena-theme') || 'auto';
+    var dark = t === 'dark' || (t === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    d.setAttribute('data-theme', dark ? 'dark' : 'light');
+    d.dataset.pref = t;
+
+    var c = localStorage.getItem('pena-clean');
+    if (c !== null && !isNaN(+c)) d.setAttribute('data-clean', String(Math.max(0, Math.min(4, +c))));
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 
@@ -33,13 +48,82 @@
   <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.4s5.6 5.7 5.6 9.3a5.6 5.6 0 1 1-11.2 0c0-3.6 5.6-9.3 5.6-9.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
   <symbol id="i-car" viewBox="0 0 24 24"><path d="M3.8 16.6h16.4M5.4 16.6v-2.4c0-.4.1-.8.4-1.1l1.9-2.8a2.6 2.6 0 0 1 2.1-1.1h4.4c.8 0 1.6.4 2.1 1.1l1.9 2.8c.3.3.4.7.4 1.1v2.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.9" cy="16.7" r="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.1" cy="16.7" r="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
   <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-auto" viewBox="0 0 24 24"><rect x="2.8" y="4.6" width="18.4" height="11.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 20h6M12 16.2V20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-wipe" viewBox="0 0 24 24"><path d="M4 5.5c2.6 1.4 5.2 1.4 7.8 0s5.2-1.4 7.8 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 12c2.6 1.4 5.2 1.4 7.8 0s5.2-1.4 7.8 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M4 18.5c2.6 1.4 5.2 1.4 7.8 0s5.2-1.4 7.8 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".28"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.6 8.6h3l1.4-2.2h8l1.4 2.2h3v10.2H3.6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13.4" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
 </svg>
+
+<!-- Фон: машина, которая остаётся за контентом -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__glow"></div>
+  <svg class="car" viewBox="0 0 1200 430" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--car-1)"/>
+        <stop offset=".45" stop-color="var(--car-2)"/>
+        <stop offset="1" stop-color="var(--car-3)"/>
+      </linearGradient>
+      <linearGradient id="carSheen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="var(--car-sheen)" stop-opacity="0"/>
+        <stop offset=".45" stop-color="var(--car-sheen)" stop-opacity=".85"/>
+        <stop offset=".6" stop-color="var(--car-sheen)" stop-opacity="0"/>
+      </linearGradient>
+      <pattern id="grimePat" width="26" height="26" patternUnits="userSpaceOnUse">
+        <circle cx="4" cy="6" r="1.6" fill="var(--grime-ink)" opacity=".5"/>
+        <circle cx="15" cy="3" r="1" fill="var(--grime-ink)" opacity=".4"/>
+        <circle cx="20" cy="14" r="2.1" fill="var(--grime-ink)" opacity=".28"/>
+        <circle cx="8" cy="19" r="1.2" fill="var(--grime-ink)" opacity=".45"/>
+        <circle cx="23" cy="23" r="1.4" fill="var(--grime-ink)" opacity=".3"/>
+        <circle cx="12" cy="11" r=".7" fill="var(--grime-ink)" opacity=".6"/>
+      </pattern>
+      <clipPath id="carClip"><path d="M74 322C66 292 80 272 112 262L250 234C300 224 340 214 378 198L452 168C478 156 506 150 540 150L742 150C780 150 810 160 834 182L900 238L1070 258C1104 264 1122 282 1124 310L1126 334L956 334A66 66 0 0 0 824 334L396 334A66 66 0 0 0 264 334L74 334Z"/></clipPath>
+    </defs>
+
+    <ellipse class="car__shadow" cx="600" cy="402" rx="520" ry="14" fill="var(--car-shadow)"/>
+
+    <g class="car__body">
+      <path class="car__shell" fill="url(#carBody)" d="M74 322C66 292 80 272 112 262L250 234C300 224 340 214 378 198L452 168C478 156 506 150 540 150L742 150C780 150 810 160 834 182L900 238L1070 258C1104 264 1122 282 1124 310L1126 334L956 334A66 66 0 0 0 824 334L396 334A66 66 0 0 0 264 334L74 334Z"/>
+      <path class="car__glass" fill="var(--car-glass)" d="M468 196C492 172 516 164 548 164L728 164C762 164 786 174 806 194L816 204L470 204Z"/>
+      <path class="car__pillar" fill="none" stroke="var(--car-line)" stroke-width="3" d="M622 164v40"/>
+      <path class="car__line" fill="none" stroke="var(--car-line)" stroke-width="2.5" stroke-linecap="round" d="M150 296C382 272 782 266 1070 290"/>
+      <path class="car__lamp" fill="var(--car-lamp)" d="M88 272l56-12 5 15-57 11Z"/>
+      <path class="car__lamp car__lamp--rear" fill="var(--car-lamp)" d="M1084 280l32 6-2 17-32-7Z"/>
+      <g class="car__wheel">
+        <circle cx="330" cy="330" r="62" fill="var(--car-wheel)"/>
+        <circle cx="330" cy="330" r="36" fill="none" stroke="var(--car-rim)" stroke-width="3"/>
+        <circle cx="330" cy="330" r="10" fill="var(--car-rim)"/>
+      </g>
+      <g class="car__wheel">
+        <circle cx="890" cy="330" r="62" fill="var(--car-wheel)"/>
+        <circle cx="890" cy="330" r="36" fill="none" stroke="var(--car-rim)" stroke-width="3"/>
+        <circle cx="890" cy="330" r="10" fill="var(--car-rim)"/>
+      </g>
+      <rect x="0" y="0" width="1200" height="430" fill="url(#carSheen)" clip-path="url(#carClip)" class="car__sheen"/>
+    </g>
+
+    <g class="car__dirt" clip-path="url(#carClip)">
+      <rect x="0" y="0" width="1200" height="430" fill="url(#grimePat)"/>
+      <rect x="0" y="0" width="1200" height="430" fill="var(--grime-film)" opacity=".55"/>
+    </g>
+  </svg>
+  <div class="bg__grid"></div>
+</div>
+
+<!-- «Грязное стекло»: пыль и разводы по краям, уходят по шагам заявки -->
+<div class="grime" aria-hidden="true">
+  <span class="grime__dust"></span>
+  <span class="grime__spots"></span>
+  <span class="grime__edge"></span>
+</div>
+<div class="shine" aria-hidden="true"></div>
 
 <header class="hdr" data-hdr>
   <div class="hdr__in wrap">
-    <a class="logo" href="#top" aria-label="DETAILING, выездной детейлинг — на главную">
+    <a class="logo" href="#top" aria-label="PENA DETAIL — на главную">
       <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>
-      <span class="logo__txt">DETAILING<small>выездной детейлинг</small></span>
+      <span class="logo__txt">PENA DETAIL<small>выездной детейлинг</small></span>
     </a>
 
     <nav class="nav" aria-label="Основная навигация">
@@ -50,9 +134,14 @@
     </nav>
 
     <div class="hdr__side">
-      <a class="hdr__phone" href="tel:+79991234567">
+      <div class="thm" role="group" aria-label="Тема оформления">
+        <button class="thm__b" type="button" data-theme-set="auto" aria-pressed="false" title="Как в системе"><svg class="i" aria-hidden="true"><use href="#i-auto"/></svg><span class="sr">Системная тема</span></button>
+        <button class="thm__b" type="button" data-theme-set="light" aria-pressed="false" title="Светлая"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg><span class="sr">Светлая тема</span></button>
+        <button class="thm__b" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span class="sr">Тёмная тема</span></button>
+      </div>
+      <a class="hdr__phone" href="#booking" data-cfg-phone-link hidden>
         <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>
-        <span>+7 999 123-45-67</span>
+        <span data-cfg-phone></span>
       </a>
       <a class="btn btn--primary btn--sm hdr__btn" href="#booking">Записаться</a>
     </div>
@@ -71,8 +160,12 @@
     <a href="#faq" data-menu-link><span>Частые вопросы</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </nav>
   <div class="mmenu__foot">
-    <a class="mmenu__phone" href="tel:+79991234567">+7 999 123-45-67</a>
-    <p class="mmenu__note">Ежедневно, 9:00–21:00. Москва и область.</p>
+    <div class="thm thm--wide" role="group" aria-label="Тема оформления">
+      <button class="thm__b" type="button" data-theme-set="auto" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-auto"/></svg><span>Авто</span></button>
+      <button class="thm__b" type="button" data-theme-set="light" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg><span>Светлая</span></button>
+      <button class="thm__b" type="button" data-theme-set="dark" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span>Тёмная</span></button>
+    </div>
+    <p class="mmenu__note" data-cfg-area>Москва и область, до 30 км от МКАД</p>
     <a class="btn btn--primary btn--block" href="#booking" data-menu-link>Оставить заявку</a>
   </div>
 </div>
@@ -81,95 +174,75 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__streak" aria-hidden="true"></div>
     <div class="wrap hero__in">
       <div class="hero__copy">
         <p class="eyebrow" data-anim style="--d:0">
           <svg class="i eyebrow__ic" aria-hidden="true"><use href="#i-spark"/></svg>
-          Москва и область · ежедневно 9:00–21:00
+          <span data-cfg-area>Москва и область, до 30 км от МКАД</span>
         </p>
         <h1 class="h1" data-anim style="--d:1">
           Детейлинг,<br>который<br><span class="h1__accent">приезжает</span> к&nbsp;вам
         </h1>
         <p class="lead" data-anim style="--d:2">
           Моем, полируем и защищаем автомобиль у вашего дома, офиса или в паркинге.
-          Вы занимаетесь своими делами — мастер работает на месте со своей водой,
-          химией и оборудованием.
+          Вы занимаетесь своими делами — мастер работает на месте.
         </p>
         <div class="hero__actions" data-anim style="--d:3">
-          <a class="btn btn--primary btn--lg" href="#services">
-            Рассчитать стоимость
+          <a class="btn btn--primary btn--lg" href="#booking">
+            Оставить заявку
             <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="#how">Как это работает</a>
+          <a class="btn btn--ghost btn--lg" href="#services">Услуги и цены</a>
         </div>
         <ul class="hero__points" data-anim style="--d:4">
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Без поездок в сервис</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Своё оборудование</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Гарантия на работы</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Своя вода и оборудование</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Гарантия 14 дней</li>
         </ul>
+
+        <p class="hint" data-dirt-hint data-anim style="--d:5">
+          <svg class="i" aria-hidden="true"><use href="#i-wipe"/></svg>
+          <span>Этот сайт тоже нужно отмыть. Пройдите заявку — и он станет чистым.</span>
+          <a href="#booking">Начать</a>
+        </p>
       </div>
 
       <div class="hero__media" data-anim style="--d:3">
         <div class="ticket">
           <div class="ticket__sheen" aria-hidden="true"></div>
           <div class="ticket__top">
-            <span class="ticket__id">Заявка № 1247</span>
-            <span class="pill pill--live"><i class="dot" aria-hidden="true"></i>в работе</span>
+            <span class="ticket__id">Комплекс · один визит</span>
+            <span class="pill"><i class="dot" aria-hidden="true"></i>полный цикл</span>
           </div>
-          <p class="ticket__car">BMW 5 Series</p>
-          <p class="ticket__meta">чёрный металлик · седан · 2021</p>
-
-          <p class="ticket__addr">
-            <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>
-            <span>ул. Лесная, 12 — подземный паркинг</span>
-            <span class="ticket__dist">4,2 км</span>
-          </p>
+          <p class="ticket__car">Комплексный детейлинг</p>
+          <p class="ticket__meta">мойка · полировка · химчистка · защита</p>
 
           <ol class="steps">
             <span class="steps__line" aria-hidden="true"></span>
-            <li class="steps__item is-done">
-              <span class="steps__dot" aria-hidden="true"></span>
-              <span class="steps__name">Мойка и очищение</span>
-              <span class="steps__time">09:10</span>
-            </li>
-            <li class="steps__item is-now">
-              <span class="steps__dot" aria-hidden="true"></span>
-              <span class="steps__name">Полировка кузова</span>
-              <span class="steps__time">11:40</span>
-            </li>
-            <li class="steps__item">
-              <span class="steps__dot" aria-hidden="true"></span>
-              <span class="steps__name">Керамика, 2 слоя</span>
-              <span class="steps__time">14:00</span>
-            </li>
+            <li class="steps__item is-done"><span class="steps__dot" aria-hidden="true"></span><span class="steps__name">Мойка и очищение ЛКП</span><span class="steps__time">этап 1</span></li>
+            <li class="steps__item is-done"><span class="steps__dot" aria-hidden="true"></span><span class="steps__name">Полировка кузова</span><span class="steps__time">этап 2</span></li>
+            <li class="steps__item is-now"><span class="steps__dot" aria-hidden="true"></span><span class="steps__name">Химчистка салона</span><span class="steps__time">этап 3</span></li>
+            <li class="steps__item"><span class="steps__dot" aria-hidden="true"></span><span class="steps__name">Керамика и защита</span><span class="steps__time">этап 4</span></li>
           </ol>
 
           <div class="ticket__foot">
-            <span class="ava" aria-hidden="true">АК</span>
-            <span class="ticket__master">
-              <b>Артём</b>
-              <small>мастер, приехал в 09:05</small>
-            </span>
-            <a class="ticket__chat" href="#booking" aria-label="Написать мастеру">
-              <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
-            </a>
+            <span class="ticket__price"><i>от</i> <span data-complex-from>35 000</span> ₽</span>
+            <a class="btn btn--soft btn--sm" href="#booking">Записаться</a>
           </div>
         </div>
 
         <div class="slot" aria-hidden="true">
           <i class="dot dot--ok"></i>
-          Ближайший выезд — сегодня 18:30
+          <span>Один мастер · гарантия 14 дней</span>
         </div>
       </div>
     </div>
 
     <div class="wrap">
       <dl class="stats" data-anim style="--d:5">
-        <div class="stat"><dt>Поездок в сервис</dt><dd>0</dd></div>
-        <div class="stat"><dt>Времени на автомобиль</dt><dd>2–6 ч</dd></div>
-        <div class="stat"><dt>Работаем</dt><dd>7/7</dd></div>
+        <div class="stat"><dt>Мастер на автомобиль</dt><dd>1</dd></div>
+        <div class="stat"><dt>Времени на визит</dt><dd>2–6 ч</dd></div>
+        <div class="stat"><dt>Гарантия на работы</dt><dd>14 дней</dd></div>
         <div class="stat"><dt>Услуги</dt><dd>от 1 500 ₽</dd></div>
       </dl>
     </div>
@@ -193,12 +266,12 @@
         <article class="card" data-reveal>
           <span class="card__ic"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span>
           <h3 class="card__h">Пока вы заняты</h3>
-          <p class="card__p">Работаем автономно: привозим воду, генератор и всю химию. Можно уйти на встречу или остаться дома — процесс не требует вас.</p>
+          <p class="card__p">Мастер работает автономно: привозит воду, питание и всю химию. Можно уйти на встречу — процесс не требует вас.</p>
         </article>
         <article class="card" data-reveal>
           <span class="card__ic"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span>
           <h3 class="card__h">Один автомобиль — один мастер</h3>
-          <p class="card__p">Без конвейера: от 1,5 часа на мойку до 6–8 часов на керамику. Столько, сколько нужно, а не сколько успели.</p>
+          <p class="card__p">Без конвейера и сменщиков: от 2 до 6 часов на машину. Столько, сколько нужно, а не сколько успели.</p>
         </article>
         <article class="card" data-reveal>
           <span class="card__ic"><svg class="i" aria-hidden="true"><use href="#i-drop"/></svg></span>
@@ -210,11 +283,11 @@
   </section>
 
   <!-- HOW -->
-  <section class="sec sec--alt" id="how" aria-labelledby="how-h">
+  <section class="sec sec--band" id="how" aria-labelledby="how-h">
     <div class="wrap">
       <div class="sec__head">
         <p class="eyebrow">Процесс</p>
-        <h2 class="h2" id="how-h">Как проходит день с DETAILING</h2>
+        <h2 class="h2" id="how-h">Как проходит день с PENA DETAIL</h2>
         <p class="sec__sub">Четыре шага: от заявки до приёмки. Ни одного раза, когда вам нужно куда-то ехать.</p>
       </div>
 
@@ -222,22 +295,22 @@
         <li class="flow__step" data-reveal>
           <span class="flow__num">01</span>
           <h3 class="flow__h">Заявка</h3>
-          <p class="flow__p">Оставьте телефон и адрес или просто напишите в мессенджер. Перезвоним в течение 15 минут в рабочее время.</p>
+          <p class="flow__p">Отметьте класс автомобиля и услуги, оставьте телефон и адрес. Заявка занимает меньше двух минут.</p>
         </li>
         <li class="flow__step" data-reveal>
           <span class="flow__num">02</span>
-          <h3 class="flow__h">Расчёт и время</h3>
-          <p class="flow__p">Уточним размер, состояние кузова и пожелания. Подберём услуги и согласуем удобный день и интервал.</p>
+          <h3 class="flow__h">Согласование</h3>
+          <p class="flow__p">Подтверждаем стоимость с учётом класса авто и состояния кузова, выбираем удобный день и время.</p>
         </li>
         <li class="flow__step" data-reveal>
           <span class="flow__num">03</span>
           <h3 class="flow__h">Выезд мастера</h3>
-          <p class="flow__p">Мастер приезжает со всем оборудованием, подключается к воде и розетке — или работает от генератора и бака.</p>
+          <p class="flow__p">Мастер приезжает со своей водой, питанием и оборудованием. Если у вас есть вода и розетка 220 В — подключится к ним, так быстрее.</p>
         </li>
         <li class="flow__step" data-reveal>
           <span class="flow__num">04</span>
           <h3 class="flow__h">Приёмка</h3>
-          <p class="flow__p">Показываем результат, фото «до/после», рекомендации по уходу. Оплата — после приёмки работ.</p>
+          <p class="flow__p">Показываем результат и рекомендации по уходу. На работы — гарантия 14 дней.</p>
         </li>
       </ol>
 
@@ -245,7 +318,7 @@
         <svg class="i note__ic" aria-hidden="true"><use href="#i-pin"/></svg>
         <div>
           <b>Что нужно с вашей стороны</b>
-          <p>Место рядом с автомобилем примерно 2×4 м и доступ к воде и розетке 220 В. Если ни того, ни другого нет — предупредите заранее: привезём свои.</p>
+          <p>Место рядом с автомобилем примерно 2×4 метра. Вода и электричество — по возможности: если их нет, мастер привезёт свои. В паркинге работаем круглый год, если хватает места и высоты.</p>
         </div>
       </aside>
     </div>
@@ -258,12 +331,16 @@
         <div>
           <p class="eyebrow">Прайс-лист</p>
           <h2 class="h2" id="services-h">Услуги и цены</h2>
-          <p class="sec__sub">Отметьте нужное — посчитаем предварительную смету. Итоговую стоимость подтверждаем после осмотра: она зависит от размера автомобиля и состояния ЛКП.</p>
+          <p class="sec__sub">Отметьте нужное — смета посчитается сама. Итоговую стоимость подтверждаем после осмотра: она зависит от состояния ЛКП.</p>
         </div>
-        <p class="price-note">
-          <svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg>
-          «от» — цена зависит от состояния кузова
-        </p>
+        <div class="clsbar-wrap">
+          <div class="clsbar" role="radiogroup" aria-label="Класс автомобиля">
+            <button class="clsbar__b" type="button" data-class-set="sedan" aria-pressed="true">Седан</button>
+            <button class="clsbar__b" type="button" data-class-set="crossover" aria-pressed="false">Кроссовер</button>
+            <button class="clsbar__b" type="button" data-class-set="suv" aria-pressed="false">Внедорожник</button>
+          </div>
+          <p class="clsbar__note" data-class-note>Цены для седана</p>
+        </div>
       </div>
 
       <div class="tabs" role="group" aria-label="Фильтр услуг">
@@ -277,200 +354,137 @@
       </div>
 
       <div class="grid" data-grid>
-        <!-- Кузов -->
         <label class="svc" data-item data-group="body" data-id="wash" data-name="Детейлинг-мойка кузова" data-price="3000" data-from="1">
           <input class="svc__in" type="checkbox" value="wash">
-          <span class="svc__top">
-            <span class="svc__name">Детейлинг-мойка кузова</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Детейлинг-мойка кузова</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Тщательная мойка профессиональной автохимией: лёгкие загрязнения, битумные пятна, следы насекомых.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 3&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 3&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="body" data-id="decon" data-name="Глубокое очищение ЛКП" data-price="4000" data-from="1">
           <input class="svc__in" type="checkbox" value="decon">
-          <span class="svc__top">
-            <span class="svc__name">Глубокое очищение ЛКП</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Глубокое очищение ЛКП</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Очистка от стойких загрязнений, металлических вкраплений и древесной смолы специальными составами.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 4&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 4&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="body" data-id="polish-light" data-name="Лёгкая полировка кузова" data-price="8000" data-from="1">
           <input class="svc__in" type="checkbox" value="polish-light">
-          <span class="svc__top">
-            <span class="svc__name">Лёгкая полировка кузова</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Лёгкая полировка кузова</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Убираем мелкие царапины, потёртости и голограммы, возвращаем блеск без глубокого вмешательства в лак.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 8&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 8&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="body" data-id="polish-full" data-name="Восстановительная полировка кузова" data-price="14000" data-from="1">
           <input class="svc__in" type="checkbox" value="polish-full">
-          <span class="svc__top">
-            <span class="svc__name">Восстановительная полировка</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Восстановительная полировка</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Комплексная полировка с удалением глубоких царапин и дефектов ЛКП, восстановление заводского блеска.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 14&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 14&nbsp;000 ₽</span></span>
         </label>
 
-        <!-- Защита -->
         <label class="svc" data-item data-group="protect" data-id="wax" data-name="Нанесение твёрдого воска" data-price="4000">
           <input class="svc__in" type="checkbox" value="wax">
-          <span class="svc__top">
-            <span class="svc__name">Нанесение твёрдого воска</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Нанесение твёрдого воска</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Защитное покрытие с блеском и гидрофобными свойствами на срок до 3 месяцев.</span>
-          <span class="svc__foot"><span class="svc__price">4&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>4&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="protect" data-id="cera2" data-name="Керамическое покрытие, 2 слоя" data-price="17000" data-from="1">
           <input class="svc__in" type="checkbox" value="cera2">
-          <span class="svc__top">
-            <span class="svc__name">Керамика, 2 слоя</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Керамика, 2 слоя</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Многослойная нанокерамика с усиленным гидрофобным эффектом, защитой от УФ и химии. Срок — 1–2 года.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 17&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 17&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="protect" data-id="cera3" data-name="Керамическое покрытие, 3 слоя" data-price="25000" data-from="1">
           <input class="svc__in" type="checkbox" value="cera3">
-          <span class="svc__top">
-            <span class="svc__name">Керамика, 3 слоя</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Керамика, 3 слоя</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Усиленная защита ЛКП с максимальной стойкостью. Срок — 2–3 года.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 25&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 25&nbsp;000 ₽</span></span>
         </label>
 
-        <!-- Салон -->
         <label class="svc" data-item data-group="salon" data-id="salon-wet" data-name="Влажная уборка салона" data-price="1500">
           <input class="svc__in" type="checkbox" value="salon-wet">
-          <span class="svc__top">
-            <span class="svc__name">Влажная уборка салона</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Влажная уборка салона</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Быстрая уборка салона с удалением лёгких загрязнений.</span>
-          <span class="svc__foot"><span class="svc__price">1&nbsp;500 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>1&nbsp;500 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="salon" data-id="salon-deep" data-name="Детейлинг-химчистка салона" data-price="12000" data-from="1">
           <input class="svc__in" type="checkbox" value="salon-deep">
-          <span class="svc__top">
-            <span class="svc__name">Детейлинг-химчистка салона</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Детейлинг-химчистка салона</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Глубокая очистка всех поверхностей: сиденья, потолок, пол, дверные карты, пластик и металл. Убираем пятна и запахи.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 12&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 12&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="salon" data-id="salon-inlay" data-name="Полировка декоративных вставок салона" data-price="5000">
           <input class="svc__in" type="checkbox" value="salon-inlay">
-          <span class="svc__top">
-            <span class="svc__name">Полировка вставок салона</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Полировка вставок салона</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Возвращаем блеск хромированным, пластиковым и деревянным вставкам в салоне.</span>
-          <span class="svc__foot"><span class="svc__price">5&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>5&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="salon" data-id="salon-guard" data-name="Защита салона" data-price="15000">
           <input class="svc__in" type="checkbox" value="salon-guard">
-          <span class="svc__top">
-            <span class="svc__name">Защита салона</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Защита салона</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Защитные составы для кожаных, текстильных и пластиковых поверхностей: проще уход, дольше срок службы.</span>
-          <span class="svc__foot"><span class="svc__price">15&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>15&nbsp;000 ₽</span></span>
         </label>
 
-        <!-- Стёкла и колёса -->
         <label class="svc" data-item data-group="glass" data-id="headlight" data-name="Полировка фар, 1 шт." data-price="1500">
           <input class="svc__in" type="checkbox" value="headlight">
-          <span class="svc__top">
-            <span class="svc__name">Полировка фар, 1 шт.</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Полировка фар, 1 шт.</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Восстанавливаем прозрачность, убираем помутнение и царапины.</span>
-          <span class="svc__foot"><span class="svc__price">1&nbsp;500 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>1&nbsp;500 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="glass" data-id="taillight" data-name="Полировка задних фонарей, 1 шт." data-price="1000">
           <input class="svc__in" type="checkbox" value="taillight">
-          <span class="svc__top">
-            <span class="svc__name">Полировка задних фонарей, 1 шт.</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Полировка задних фонарей, 1 шт.</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Возвращаем внешний вид задним фонарям, убираем царапины и помутнение.</span>
-          <span class="svc__foot"><span class="svc__price">1&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>1&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="glass" data-id="rain-front" data-name="Антидождь на переднюю полусферу" data-price="3000">
           <input class="svc__in" type="checkbox" value="rain-front">
-          <span class="svc__top">
-            <span class="svc__name">Антидождь на переднюю полусферу</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Антидождь на переднюю полусферу</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Гидрофобный состав на лобовое и передние боковые стёкла — видимость в дождь заметно лучше.</span>
-          <span class="svc__foot"><span class="svc__price">3&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>3&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="glass" data-id="rain-all" data-name="Антидождь на все стёкла" data-price="4000">
           <input class="svc__in" type="checkbox" value="rain-all">
-          <span class="svc__top">
-            <span class="svc__name">Антидождь на все стёкла</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Антидождь на все стёкла</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Гидрофобный состав на все стёкла автомобиля.</span>
-          <span class="svc__foot"><span class="svc__price">4&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>4&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="glass" data-id="wheels" data-name="Защита колёсных дисков" data-price="9000">
           <input class="svc__in" type="checkbox" value="wheels">
-          <span class="svc__top">
-            <span class="svc__name">Защита колёсных дисков</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Защита колёсных дисков</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Защитный состав на диски: меньше коррозии, проще уход, грязь смывается легче.</span>
-          <span class="svc__foot"><span class="svc__price">9&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>9&nbsp;000 ₽</span></span>
         </label>
 
-        <!-- Двигатель и арки -->
         <label class="svc" data-item data-group="engine" data-id="bay" data-name="Детейлинг подкапотного пространства" data-price="3000">
           <input class="svc__in" type="checkbox" value="bay">
-          <span class="svc__top">
-            <span class="svc__name">Детейлинг подкапотного пространства</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Детейлинг подкапотного пространства</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Очистка двигателя и подкапотного пространства с защитой электронных компонентов.</span>
-          <span class="svc__foot"><span class="svc__price">3&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>3&nbsp;000 ₽</span></span>
         </label>
 
         <label class="svc" data-item data-group="engine" data-id="arch" data-name="Химчистка арок и подвески" data-price="3000">
           <input class="svc__in" type="checkbox" value="arch">
-          <span class="svc__top">
-            <span class="svc__name">Химчистка арок и подвески</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Химчистка арок и подвески</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Очистка ходовой части, арок и днища от грязи и реагентов — профилактика коррозии.</span>
-          <span class="svc__foot"><span class="svc__price">3&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out>3&nbsp;000 ₽</span></span>
         </label>
 
-        <!-- Комплекс -->
         <label class="svc svc--hero" data-item data-group="complex" data-id="complex" data-name="Комплексный детейлинг" data-price="35000" data-from="1">
           <input class="svc__in" type="checkbox" value="complex">
-          <span class="svc__top">
-            <span class="svc__name">Комплексный детейлинг</span>
-            <span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span>
-          </span>
+          <span class="svc__top"><span class="svc__name">Комплексный детейлинг</span><span class="svc__mark" aria-hidden="true"><svg class="i svc__plus"><use href="#i-plus"/></svg><svg class="i svc__done"><use href="#i-check"/></svg></span></span>
           <span class="svc__desc">Мойка + полировка + химчистка + защита. Полный цикл услуг, чтобы привести автомобиль в идеальное состояние за один визит.</span>
-          <span class="svc__foot"><span class="svc__price"><i>от</i> 35&nbsp;000 ₽</span></span>
+          <span class="svc__foot"><span class="svc__price" data-price-out><i>от</i> 35&nbsp;000 ₽</span></span>
         </label>
       </div>
 
@@ -484,7 +498,7 @@
         </div>
         <div class="combo__price">
           <span class="combo__from">от</span>
-          <span class="combo__sum">35&nbsp;000 ₽</span>
+          <span class="combo__sum" data-complex-price>35&nbsp;000 ₽</span>
           <span class="combo__note">за автомобиль, всё включено</span>
         </div>
       </aside>
@@ -492,7 +506,7 @@
   </section>
 
   <!-- CARE -->
-  <section class="sec sec--alt" id="care" aria-labelledby="care-h">
+  <section class="sec sec--band" id="care" aria-labelledby="care-h">
     <div class="wrap care">
       <div class="care__copy">
         <p class="eyebrow">Подход</p>
@@ -502,8 +516,8 @@
         <ul class="checks">
           <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Контроль толщины ЛКП</b><span>Замер до и после полировки: снимаем ровно столько, сколько нужно.</span></div></li>
           <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Работа в тени или в паркинге</b><span>На солнце состав сохнет неравномерно — поэтому ищем укрытие, а не работаем «как получится».</span></div></li>
-          <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Фото «до/после»</b><span>Фиксируем состояние на каждом этапе, чтобы вы видели объём работы.</span></div></li>
-          <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Гарантия и рекомендации</b><span>Гарантия на работы, на керамику — до 2–3 лет. Расскажем, как ухаживать, чтобы результат держался.</span></div></li>
+          <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Фото до и после</b><span>Фиксируем состояние на каждом этапе — вы видите объём работы, а не только результат.</span></div></li>
+          <li data-reveal><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><div><b>Гарантия 14 дней</b><span>Если на работах появился дефект по нашей вине — исправим без доплаты.</span></div></li>
         </ul>
       </div>
 
@@ -520,40 +534,56 @@
     </div>
   </section>
 
+  <!-- GALLERY: появляется, когда в config.js добавлены фото -->
+  <section class="sec" id="works" aria-labelledby="works-h" hidden data-works>
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="eyebrow">Работы</p>
+        <h2 class="h2" id="works-h">Что получается в итоге</h2>
+        <p class="sec__sub">Реальные автомобили и реальные условия: двор, паркинг, дача.</p>
+      </div>
+      <div class="works" data-works-grid></div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="sec" id="faq" aria-labelledby="faq-h">
     <div class="wrap faq">
       <div class="faq__head">
         <p class="eyebrow">Вопросы</p>
         <h2 class="h2" id="faq-h">Коротко о главном</h2>
-        <p class="sec__sub">Не нашли ответ? Позвоните — 15 минут разговора обычно быстрее, чем переписка.</p>
-        <a class="btn btn--ghost" href="tel:+79991234567"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+7 999 123-45-67</a>
+        <p class="sec__sub">Не нашли ответ? Оставьте заявку — ответим и уточним детали по вашему автомобилю.</p>
+        <a class="btn btn--ghost" href="#booking"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Оставить заявку</a>
       </div>
 
       <div class="faq__list" data-reveal>
         <details class="acc" open>
           <summary class="acc__q"><span>Что нужно, чтобы мастер приехал?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>Место рядом с автомобилем примерно 2×4 метра и доступ к воде и розетке 220 В. Если воды или электричества нет — предупредите при заявке: привезём бак и генератор.</p></div>
+          <div class="acc__body"><p>Место рядом с автомобилем примерно 2×4 метра. Воду и электричество мастер привозит с собой; если у вас есть вода и розетка 220 В — подключится к ним, это быстрее и тише. В паркинге работаем круглый год, если хватает места и высоты.</p></div>
         </details>
         <details class="acc">
           <summary class="acc__q"><span>Сколько времени это займёт?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>От 1,5 часа на мойку до 6–8 часов на керамику с полировкой. Точное время скажем после уточнения состояния автомобиля. Оставаться рядом не нужно — можно уехать по делам.</p></div>
+          <div class="acc__body"><p>От 2 до 6 часов в зависимости от услуг и состояния автомобиля. Точное время скажем после уточнения деталей. Оставаться рядом не нужно — можно уехать по делам.</p></div>
         </details>
         <details class="acc">
-          <summary class="acc__q"><span>Работаете ли зимой?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>Да, при температуре не ниже −10 °C и без осадков. В подземном паркинге работаем круглый год — там стабильная температура и нет пыли.</p></div>
+          <summary class="acc__q"><span>Кто именно приедет?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
+          <div class="acc__body"><p>Работает один мастер — тот же, кто отвечает на заявку. Один автомобиль, один человек, без сменщиков и конвейера.</p></div>
         </details>
         <details class="acc">
-          <summary class="acc__q"><span>Что если пойдёт дождь или снег?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>Перенесём на ближайшее свободное окно без доплаты или предложим паркинг. Полировку и керамику в дождь не делаем — это бессмысленно.</p></div>
+          <summary class="acc__q"><span>Какая гарантия на работы?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
+          <div class="acc__body"><p>14 дней на выполненные работы. Если за это время появился дефект по нашей вине — исправим без доплаты. На защитные покрытия действуют сроки, указанные в описании услуги.</p></div>
+        </details>
+        <details class="acc">
+          <summary class="acc__q"><span>Работаете ли зимой и в плохую погоду?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
+          <div class="acc__body"><p>В паркинге — круглый год. На улице — по погоде: в дождь и снег полировку и защиту не делаем, это бессмысленно. Точные условия по вашему случаю уточним при заявке.</p></div>
         </details>
         <details class="acc">
           <summary class="acc__q"><span>Нужно ли мыть машину перед приездом?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>Нет. Мойка и очищение ЛКП — первый этап работы, он входит в услугу. Приезжать на «чистую» машину в студию не требуется, тем более к вам домой.</p></div>
+          <div class="acc__body"><p>Нет. Мойка и очищение ЛКП — первый этап работы, он входит в услугу.</p></div>
         </details>
         <details class="acc">
-          <summary class="acc__q"><span>Как оплатить и есть ли гарантия?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
-          <div class="acc__body"><p>Оплата после приёмки: перевод, карта или наличные. На работы даём гарантию, на керамические покрытия — до 2–3 лет при соблюдении условий ухода.</p></div>
+          <summary class="acc__q"><span>Как оплатить?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
+          <div class="acc__body"><p>После приёмки работ. Способ оплаты согласуем при подтверждении заявки.</p></div>
         </details>
         <details class="acc">
           <summary class="acc__q"><span>Куда выезжаете?</span><span class="acc__ic" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span></summary>
@@ -566,107 +596,140 @@
   <!-- BOOKING -->
   <section class="sec sec--booking" id="booking" aria-labelledby="booking-h">
     <div class="wrap booking">
-      <div class="booking__form-wrap">
-        <p class="eyebrow">Запись</p>
+      <div class="booking__main">
+        <p class="eyebrow">Заявка</p>
         <h2 class="h2" id="booking-h">Оставьте заявку</h2>
-        <p class="sec__sub">Перезвоним в течение 15 минут, уточним детали и предложим ближайшее окно. Заявка ничего не обязывает.</p>
+        <p class="sec__sub">Четыре шага. Чем дальше — тем чище: грязь на сайте уходит вместе с вашей заявкой.</p>
 
-        <form class="form" data-form novalidate>
-          <div class="form__row">
-            <label class="fld">
-              <span class="fld__l">Как вас зовут</span>
-              <input class="fld__i" type="text" name="name" autocomplete="name" placeholder="Александр" required>
+        <div class="stepper" data-flow>
+          <ol class="stepper__dots" aria-label="Этапы заявки">
+            <li class="stepper__dot is-on" data-dot="1"><span>Автомобиль</span></li>
+            <li class="stepper__dot" data-dot="2"><span>Услуги</span></li>
+            <li class="stepper__dot" data-dot="3"><span>Контакты</span></li>
+            <li class="stepper__dot" data-dot="4"><span>Отправка</span></li>
+          </ol>
+
+          <form class="form" data-form novalidate>
+            <section class="step is-on" data-step="1" aria-labelledby="step1-h">
+              <h3 class="step__h" id="step1-h">Какой у вас автомобиль?</h3>
+              <div class="classes" role="radiogroup" aria-label="Класс автомобиля">
+                <label class="cls"><input type="radio" name="carClass" value="sedan" checked><span class="cls__t">Седан</span><span class="cls__d">хэтчбек, купе, универсал</span></label>
+                <label class="cls"><input type="radio" name="carClass" value="crossover"><span class="cls__t">Кроссовер</span><span class="cls__d">паркетник, минивэн</span></label>
+                <label class="cls"><input type="radio" name="carClass" value="suv"><span class="cls__t">Внедорожник</span><span class="cls__d">рамный, большой клиренс</span></label>
+              </div>
+              <label class="fld">
+                <span class="fld__l">Марка и модель <i>необязательно</i></span>
+                <input class="fld__i" type="text" name="car" placeholder="BMW 5 Series, чёрный" autocomplete="off">
+              </label>
+              <div class="step__nav">
+                <span class="step__hint">Класс влияет на стоимость — цены пересчитаются сразу.</span>
+                <button class="btn btn--primary" type="button" data-next>Дальше <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+            </section>
+
+            <section class="step" data-step="2" aria-labelledby="step2-h" hidden>
+              <h3 class="step__h" id="step2-h">Что делаем?</h3>
+              <p class="step__sub">Отметьте услуги — цены уже с учётом класса <span data-class-label>седана</span>.</p>
+              <div class="pick" data-pick-list></div>
+              <div class="step__nav">
+                <button class="btn btn--ghost" type="button" data-prev>Назад</button>
+                <span class="step__sum" data-step-sum>ничего не выбрано</span>
+                <button class="btn btn--primary" type="button" data-next>Дальше <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+            </section>
+
+            <section class="step" data-step="3" aria-labelledby="step3-h" hidden>
+              <h3 class="step__h" id="step3-h">Куда и когда приехать?</h3>
+              <div class="form__row">
+                <label class="fld">
+                  <span class="fld__l">Как вас зовут</span>
+                  <input class="fld__i" type="text" name="name" autocomplete="name" placeholder="Александр" required>
+                  <span class="fld__e" data-err></span>
+                </label>
+                <label class="fld">
+                  <span class="fld__l">Телефон</span>
+                  <input class="fld__i" type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required>
+                  <span class="fld__e" data-err></span>
+                </label>
+              </div>
+              <label class="fld">
+                <span class="fld__l">Адрес выезда</span>
+                <input class="fld__i" type="text" name="address" placeholder="Москва, ул. Лесная, 12" autocomplete="street-address" required>
+                <span class="fld__e" data-err></span>
+              </label>
+              <div class="form__row">
+                <label class="fld">
+                  <span class="fld__l">Дата</span>
+                  <input class="fld__i fld__i--date" type="date" name="date" required>
+                  <span class="fld__e" data-err></span>
+                </label>
+                <label class="fld">
+                  <span class="fld__l">Удобное время</span>
+                  <select class="fld__i fld__i--sel" name="time">
+                    <option value="09:00–12:00">Утро, 9:00–12:00</option>
+                    <option value="12:00–15:00">День, 12:00–15:00</option>
+                    <option value="15:00–18:00">Вечер, 15:00–18:00</option>
+                    <option value="18:00–21:00">Поздний вечер, 18:00–21:00</option>
+                    <option value="">Ещё не знаю</option>
+                  </select>
+                </label>
+              </div>
+              <label class="fld">
+                <span class="fld__l">Комментарий <i>необязательно</i></span>
+                <textarea class="fld__i fld__i--ta" name="note" rows="2" placeholder="Например: паркинг −2, нужна розетка; или «есть скол на капоте»"></textarea>
+              </label>
+              <div class="step__nav">
+                <button class="btn btn--ghost" type="button" data-prev>Назад</button>
+                <button class="btn btn--primary" type="button" data-next>Проверить <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+            </section>
+
+            <section class="step" data-step="4" aria-labelledby="step4-h" hidden>
+              <h3 class="step__h" id="step4-h">Проверьте заявку</h3>
+              <div class="review" data-review></div>
+              <label class="agree">
+                <input type="checkbox" name="agree" required>
+                <span>Согласен на обработку персональных данных — <a href="privacy.html" target="_blank" rel="noopener">политика</a>.</span>
+              </label>
               <span class="fld__e" data-err></span>
-            </label>
-            <label class="fld">
-              <span class="fld__l">Телефон</span>
-              <input class="fld__i" type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required>
-              <span class="fld__e" data-err></span>
-            </label>
+              <div class="hpot" aria-hidden="true"><label>Не заполняйте<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+              <div class="step__nav">
+                <button class="btn btn--ghost" type="button" data-prev>Назад</button>
+                <button class="btn btn--primary btn--lg" type="submit" data-submit>Отправить заявку <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+              <p class="form__status" data-status role="status" aria-live="polite"></p>
+            </section>
+          </form>
+
+          <div class="done" data-done hidden>
+            <span class="done__ic" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span>
+            <h3 class="done__h">Заявка отправлена</h3>
+            <p class="done__p">Сайт чистый — как и ваш автомобиль после визита мастера. Свяжемся, чтобы подтвердить детали.</p>
+            <p class="done__sum" data-done-sum></p>
+            <div class="done__actions" data-done-actions></div>
+            <button class="done__back" type="button" data-done-back>Изменить заявку</button>
           </div>
-
-          <div class="form__row">
-            <label class="fld">
-              <span class="fld__l">Автомобиль</span>
-              <input class="fld__i" type="text" name="car" placeholder="BMW 5 Series, чёрный" autocomplete="off">
-            </label>
-            <label class="fld">
-              <span class="fld__l">Адрес выезда</span>
-              <input class="fld__i" type="text" name="address" placeholder="Москва, ул. Лесная, 12" autocomplete="street-address" required>
-              <span class="fld__e" data-err></span>
-            </label>
-          </div>
-
-          <div class="form__row">
-            <label class="fld">
-              <span class="fld__l">Дата</span>
-              <input class="fld__i fld__i--date" type="date" name="date" required>
-              <span class="fld__e" data-err></span>
-            </label>
-            <label class="fld">
-              <span class="fld__l">Удобное время</span>
-              <select class="fld__i fld__i--sel" name="time">
-                <option value="09:00–12:00">Утро, 9:00–12:00</option>
-                <option value="12:00–15:00">День, 12:00–15:00</option>
-                <option value="15:00–18:00">Вечер, 15:00–18:00</option>
-                <option value="18:00–21:00">Поздний вечер, 18:00–21:00</option>
-                <option value="">Ещё не знаю</option>
-              </select>
-            </label>
-          </div>
-
-          <fieldset class="form__set">
-            <legend class="fld__l">Услуги</legend>
-            <div class="chips" data-chosen>
-              <p class="chips__empty" data-chosen-empty>Ничего не выбрано — подберём вместе по телефону.</p>
-            </div>
-            <p class="chips__hint">Отметьте услуги в <a href="#services">прайс-листе</a> — они появятся здесь.</p>
-          </fieldset>
-
-          <label class="fld">
-            <span class="fld__l">Комментарий <i>необязательно</i></span>
-            <textarea class="fld__i fld__i--ta" name="note" rows="3" placeholder="Например: паркинг −2, нужна розетка; или «есть скол на капоте»"></textarea>
-          </label>
-
-          <button class="btn btn--primary btn--lg btn--block" type="submit">
-            Отправить заявку
-            <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-
-          <p class="form__legal">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Никакой рассылки — только по делу.</p>
-          <p class="form__status" data-status role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="done" data-done hidden>
-          <span class="done__ic" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span>
-          <h3 class="done__h">Заявка готова</h3>
-          <p class="done__p">Мы получили данные. Чтобы не ждать звонка — отправьте ту же заявку в мессенджер, ответим быстрее.</p>
-          <p class="done__sum" data-done-sum></p>
-          <div class="done__actions">
-            <a class="btn btn--primary" data-wa target="_blank" rel="noopener">Отправить в WhatsApp</a>
-            <a class="btn btn--ghost" data-tg target="_blank" rel="noopener">В Telegram</a>
-          </div>
-          <button class="done__back" type="button" data-done-back>Изменить заявку</button>
         </div>
       </div>
 
       <aside class="contact" id="contacts">
         <h3 class="contact__h">Связаться напрямую</h3>
-        <a class="contact__phone" href="tel:+79991234567">+7 999 123-45-67</a>
-        <p class="contact__sub">Ежедневно, 9:00–21:00</p>
+        <a class="contact__phone" href="#booking" data-cfg-phone-link hidden data-cfg-phone></a>
+        <p class="contact__sub" data-cfg-no-phone>Перезвоним после заявки и подтвердим детали</p>
+        <p class="contact__sub" data-cfg-hours hidden></p>
 
         <ul class="contact__list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><div><b>Зона выезда</b><span>Москва и область, до 30 км от МКАД</span></div></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><div><b>Зона выезда</b><span data-cfg-area>Москва и область, до 30 км от МКАД</span></div></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Выезд</b><span>Дом, офис, подземный паркинг, дача</span></div></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><div><b>Оплата</b><span>После приёмки работ: карта, перевод, наличные</span></div></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><div><b>Гарантия</b><span>14 дней на выполненные работы</span></div></li>
         </ul>
 
-        <div class="contact__btns">
-          <a class="btn btn--soft" href="https://wa.me/79991234567" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn--soft" href="https://t.me/detailing_msk" target="_blank" rel="noopener">Telegram</a>
+        <div class="contact__btns" data-cfg-messengers hidden>
+          <a class="btn btn--soft" data-cfg="whatsapp" target="_blank" rel="noopener" hidden>WhatsApp</a>
+          <a class="btn btn--soft" data-cfg="telegram" target="_blank" rel="noopener" hidden>Telegram</a>
         </div>
 
-        <p class="contact__note">Срочно? Звоните — если мастер свободен, приедем в тот же день.</p>
+        <p class="contact__note">Оставьте заявку — согласуем время и подтвердим стоимость до выезда.</p>
       </aside>
     </div>
   </section>
@@ -678,9 +741,10 @@
     <div class="ftr__brand">
       <a class="logo logo--ftr" href="#top">
         <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>
-        <span class="logo__txt">DETAILING<small>выездной детейлинг</small></span>
+        <span class="logo__txt">PENA DETAIL<small>выездной детейлинг</small></span>
       </a>
       <p class="ftr__tag">Моем, полируем и защищаем автомобиль там, где вам удобно.</p>
+      <p class="ftr__legal" data-cfg-legal>ИП · реквизиты будут указаны здесь</p>
     </div>
 
     <nav class="ftr__col" aria-label="Услуги">
@@ -696,28 +760,30 @@
       <a href="#how">Как это работает</a>
       <a href="#care">Гарантия и материалы</a>
       <a href="#faq">Частые вопросы</a>
-      <a href="#contacts">Контакты</a>
+      <a href="privacy.html">Политика данных</a>
     </nav>
 
     <div class="ftr__col">
       <p class="ftr__h">Контакты</p>
-      <a href="tel:+79991234567">+7 999 123-45-67</a>
-      <a href="https://wa.me/79991234567" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://t.me/detailing_msk" target="_blank" rel="noopener">Telegram</a>
-      <p class="ftr__hours">Ежедневно, 9:00–21:00</p>
+      <a href="#booking" data-cfg-phone-link hidden data-cfg-phone></a>
+      <a data-cfg="telegram" target="_blank" rel="noopener" hidden>Telegram</a>
+      <a data-cfg="whatsapp" target="_blank" rel="noopener" hidden>WhatsApp</a>
+      <a data-cfg="email" hidden></a>
+      <a href="#booking" data-cfg-fallback>Оставить заявку</a>
+      <p class="ftr__hours" data-cfg-hours hidden></p>
     </div>
   </div>
 
   <div class="wrap ftr__bottom">
-    <p>© <span data-year>2026</span> DETAILING. Все права защищены.</p>
-    <p>Информация на сайте не является публичной офертой.</p>
+    <p>© <span data-year>2026</span> PENA DETAIL. Все права защищены.</p>
+    <p><a href="privacy.html">Политика обработки персональных данных</a></p>
   </div>
 </footer>
 
 <div class="est" data-est inert>
   <div class="est__in">
     <div class="est__sum">
-      <span class="est__label">Предварительная смета</span>
+      <span class="est__label">Смета</span>
       <strong class="est__val" data-est-total aria-live="polite">0 ₽</strong>
       <span class="est__meta" data-est-count></span>
     </div>
@@ -726,6 +792,31 @@
   </div>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "PENA DETAIL",
+  "description": "Выездной детейлинг в Москве и области: детейлинг-мойка, полировка кузова, керамические покрытия, химчистка салона.",
+  "areaServed": { "@type": "City", "name": "Москва" },
+  "priceRange": "1500–35000 RUB",
+  "paymentAccepted": "Наличные, банковская карта, перевод",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Выездной детейлинг",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Детейлинг-мойка кузова" }, "price": "3000", "priceCurrency": "RUB" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Лёгкая полировка кузова" }, "price": "8000", "priceCurrency": "RUB" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Керамическое покрытие, 2 слоя" }, "price": "17000", "priceCurrency": "RUB" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Химчистка салона" }, "price": "12000", "priceCurrency": "RUB" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Комплексный детейлинг" }, "price": "35000", "priceCurrency": "RUB" }
+    ]
+  }
+}
+</script>
+
+<script src="assets/config.js" defer></script>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
+
